@@ -85,7 +85,6 @@ body {
     animation: showText ease-out 3s 2.3s;
     -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
-    transform-origin: 150% 0%;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 
@@ -94,21 +93,21 @@ body {
 
 @-webkit-keyframes showText {
     0% {
-        transform: translate(1000px, -300px) rotate(-20deg);
+        transform: translate(1000px, -200%);
     }
 
     100% {
-        transform: translate(-196px, -22px) rotate(0deg);
+        transform: translate(-230px, -200%);
     }
 }
 
 
 @keyframes showText {
     0% {
-        transform: translate(1000px, -300px) rotate(-20deg);
+        transform: translate(1000px, -200%);
     }
 
     100% {
-        transform: translate(-196px, -22px) rotate(0deg);
+        transform: translate(-230px, -200%);
     }
 }
