@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width" />
+
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+	<title></title>
+	<style>
+      .boarding-pass:last-of-type {
+          page-break-after: auto;
+      }
+      @media all {
+          body {
+              font-family: 'Raleway';
+              color: #4a4a4a;
+              margin: 0;
+          }
+
+          .clear {
+              clear: both;
+              font-size: 0;
+              line-height: 0;
+          }
+
+          p {
+              font-size: 14px;
+          }
+
+          h1 {
+              font-size: 24px;
+          }
+
+          .text {
+              width: 75%;
+              text-align: center;
+              word-break: normal;
+              white-space: normal;
+              margin: auto;
+          }
+
+          .highlight {
+              font-size: 18px;
+              color: #1a85d3;
+              font-weight: 600;
+              font-family: 'Montserrat';
+              padding-bottom: 15px;
+              margin: 0;
+          }
+
+          .upCase {
+              text-transform: uppercase;
+              font-weight: bold;
+          }
+
+          .boardingPass {
+              margin: auto;
+              background-image: url('https://api-production-safair-booksecure.ezyflight.se/images/Tenants/Safair/oci/background.png');
+              background-size: contain;
+              background-repeat: no-repeat;
+              height: 623.5px;
+              width: 380px;
+              display: block;
+              margin-top: 0;
+              margin-bottom: 0;
+              text-align: center;
+              position: relative;
+              z-index: -1;
+          }
+
+          .boardingPass .logo {
+              width: 131px;
+              position: absolute;
+              left: 30px;
+              top: 30px;
+          }
+
+          .boardingPass h3 {
+              font-size: 1.5em;
+              color: #0094D9;
+              margin-bottom: 5px;
+              margin-top: 10px;
+          }
+
+          .route {
+              background: #F8F8F8;
+              border-radius: 10px 10px 0px 0px;
+              padding: 10px 7px;
+          }
+
+          .route hr {
+              background-color: #CFCFCF;
+              margin: 10px 5px;
+              height: 1px;
+              border: none;
+          }
+
+          .flight {
+              width: 32%;
+              text-align: center;
+              display: inline-block;
+              vertical-align: top;
+          }
+
+          .dept,
+          .arr {
+              width: 32%;
+              display: inline-block;
+              text-align: center;
+          }
+
+          .dept h1,
+          .arr h1,
+          .flight h1 {
+              margin: 0;
+              letter-spacing: 3px;
+              font-size: 26px;
+          }
+
+          .dept h4,
+          .arr h4 {
+              margin: 0;
+              font-size: 14px;
+          }
+
+          .dept p,
+          .arr p,
+          .flight p {
+              margin: 0;
+              font-size: 12px;
+          }
+
+          .flight h4 {
+              margin: 0;
+              font-size: 12px;
+          }
+
+          .flight img {
+              margin-top: 4px;
+          }
+
+          .pass,
+          .date {
+              left: 10px;
+              top: 15px;
+              display: inline-block;
+              width: 40% !important;
+              position: relative;
+          }
+
+          .date {
+              display: inline-block;
+              width: 40%;
+          }
+
+          .pass h1,
+          .pass p,
+          .date h1,
+          .date p {
+              margin: 0;
+              font-size: 12px;
+              text-align: left;
+          }
+
+          .gate {
+              background: #F8F8F8;
+              border-radius: 0px 0px 10px 10px;
+              margin-top: 7px;
+              padding: 7px;
+              padding-bottom: 1px;
+          }
+
+          .gate>div {
+              padding: 0 8px;
+          }
+
+          .gate h4 {
+              margin: 0;
+              text-align: left;
+              font-size: 0.8em;
+          }
+
+          .gate p {
+              margin: 0;
+              text-align: left;
+              padding-bottom: 4px;
+              font-size: 12px;
+          }
+
+          .term,
+          .gt,
+          .bTime,
+          .gClose {
+              display: inline-block;
+          }
+
+          .extras {
+              background: #FFFFFF;
+              border-radius: 10px;
+              margin: 15px 10px;
+          }
+
+          .extras-items {
+              display: -webkit-box;
+              display: flex;
+              -webkit-box-pack: center;
+              justify-content: center;
+              -webkit-box-align: center;
+              align-items: center;
+              text-align: center;
+          }
+
+          .extras-item {
+              margin: 7px 20px;
+          }
+
+          .extras-item p {
+              margin: 0;
+              text-align: center;
+          }
+
+          .extras-item.extras-item--text h4 {
+              height: 40px;
+              font-size: 20px;
+              line-height: 2em;
+              text-align: center;
+          }
+
+          .extras-item.extras-item--icon img {
+              margin: 0;
+              height: 40px;
+              width: 40px;
+              display: inline-block;
+          }
+
+          .extras-item .ssrs {
+              font-weight: 600;
+          }
+
+          .foldInst {
+              width: 100%;
+              text-align: center;
+              padding-top: 20px;
+          }
+
+          .foldInst img {
+              padding-left: 25px;
+          }
+
+          .boardingpass-top {
+              height: 155px;
+              width: 100%;
+              padding-top: 64px;
+          }
+
+          .boardingpass-top__barcode {
+              height: 80px;
+          }
+
+          .boardingpass__sequence {
+              position: absolute;
+              bottom: 11px;
+              left: 50%;
+              font-size: 12px;
+          }
+
+          .boardingpass-top img {
+              margin: 7px;
+              padding: 0;
+              display: inline-block;
+          }
+
+          .boardingpass-top p {
+              margin: 0;
+              padding-bottom: 0;
+              display: block;
+          }
+
+          .boardingpass-top h4 {
+              margin: 0;
+          }
+
+          .boardingpass-bottom {
+              margin-top: 40px;
+              padding: 5px 20px;
+          }
+
+          #main {
+              width: 900px;
+          }
+
+          #main tr td {
+              width: 50%;
+          }
+
+          .Luggage {
+              margin: 0;
+              padding: 0;
+              -webkit-transform: rotate(180deg);
+              transform: rotate(180deg);
+          }
+
+          .Luggage p {
+              text-align: justify;
+          }
+
+          .timetable {
+              -webkit-transform: rotate(180deg);
+              transform: rotate(180deg);
+          }
+
+          .eventList {
+              margin-top: 14px;
+          }
+
+          .eventList .event {
+              position: relative;
+              clear: both;
+          }
+
+          .eventList .event--last h4 {
+              position: absolute;
+              bottom: 0;
+          }
+
+          .eventList .event h4 {
+              margin: 0;
+              padding: 0 15px;
+              width: 61px;
+              float: left;
+          }
+
+          .eventList .event p {
+              font-size: 12px;
+          }
+
+          .eventList .event .descrip {
+              float: right;
+              width: 260px;
+              text-align: left;
+          }
+
+          .eventList .event .descrip p {
+              text-align: justify;
+              margin-top: 5px;
+              clear: both;
+              margin-bottom: 27px;
+          }
+
+          .eventList .event .descrip h4 {
+              width: 100%;
+              float: none;
+              padding: 0;
+              clear: both;
+          }
+
+          .eventList .event .dot {
+              background-color: white;
+              height: 15px;
+              width: 15px;
+              border-radius: 100%;
+              border: 3px solid #1a85d3;
+              position: absolute;
+              left: 24%;
+          }
+
+          .line-event {
+              border-left: dashed 2px #e3258c;
+              height: 90%;
+              position: absolute;
+              top: 66px;
+              left: 105px;
+              z-index: -1;
+          }
+
+          /* --- Priority Ribbon --- */
+          .priority-boarding-ribbon {
+              width: 105px;
+              height: 40px;
+              position: absolute;
+              top: 25px;
+              right: 11px;
+              background-color: #e3258c;
+              border-top-left-radius: 10px;
+              border-bottom-left-radius: 10px;
+          }
+
+          .priority-boarding-ribbon p {
+              font-size: 18px;
+              font-weight: bold;
+              color: #fff;
+              font-family: 'Raleway';
+              line-height: 6px;
+          }
+
+          .business-class {
+              width: 105px;
+              height: 40px;
+              position: absolute;
+              top: 30px;
+              right: 8px;
+          }
+
+          .business-class img {
+              width: 100%;
+          }
+
+          .bpInformation {
+              font-size: 11px;
+              color: #808080;
+          }
+
+          body {
+              -webkit-print-color-adjust: exact;
+          }
+
+          .passenger {
+              display: flex;
+              flex-direction: column;
+          }
+
+          .passenger__header,
+          .passenger__data {
+              display: flex;
+              justify-content: space-between;
+              white-space: nowrap;
+          }
+
+          .passenger__header p,
+          .passenger__data p {
+              margin: 5px 5px 0;
+          }
+
+          .passenger__header p {
+              font-size: 12px;
+          }
+
+          .passenger__data p {
+              font-size: 13px;
+              color: #0094D9;
+              font-weight: 600;
+              font-family: 'Montserrat';
+              padding-bottom: 15px;
+              margin: 5px 5px 0;
+          }
+      }
+
+      @media print {
+          .bpHead {
+              top: 1px;
+          }
+
+          #main tr {
+              height: 550px;
+          }
+
+          .eventList .event p {
+              font-size: 11px;
+          }
+
+          .eventList .event .descrip p {
+              margin-bottom: 5px;
+          }
+
+          .eventList .event .dot {
+              background-color: white;
+              height: 15px;
+              width: 15px;
+              border-radius: 100%;
+              border: 3px solid #1a85d3;
+              position: absolute;
+          }
+
+          .eventList .event--last h4 {
+              bottom: -35px;
+          }
+      }
+	</style>
+</head>
+
+<body>
+
+
+
+
+<table cellpadding="0" cellspacing="0" id="main">
+	<tr style="height: 630px;">
+		<td>
+			<div class="face">
+				<div class="text front">
+					<h1 class="upCase">Boarding Pass</h1>
+					<p>Thank you for booking with FlySafair, your passenger reservation number is</p>
+					<p style="font-weight: bold; font-size: 12px; margin-bottom: 0; margin-top: 40px;">Booking
+						Reference:</p>
+					<p class="highlight">BHW7ED</p>
+					<img src="https://api-production-safair-booksecure.ezyflight.se/images/Tenants/Safair/oci/FSA-LogoFlySafair.jpg" alt="FlySafair Logo" style="width: 195.5px; margin: auto; padding-bottom: 35px;">
+					<p class="upCase">How to fold your boarding pass</p>
+				</div>
+				<div class="foldInst">
+					<img src="https://api-production-safair-booksecure.ezyflight.se/images/Tenants/Safair/oci/FSA-fold-1.png" alt="Fold 1" style="height: 81px; width: 65px; padding-left: 0px;">
+					<img src="https://api-production-safair-booksecure.ezyflight.se/images/Tenants/Safair/oci/FSA-fold-2.png" alt="Fold 2" style="height: 51px; width: 89.5px; padding-bottom: 11px;">
+					<img src="https://api-production-safair-booksecure.ezyflight.se/images/Tenants/Safair/oci/FSA-fold-3.png" alt="Fold 3" style="height: 40px; width: 64px; padding-bottom: 23px;">
+					<img src="https://api-production-safair-booksecure.ezyflight.se/images/Tenants/Safair/oci/FSA-fold-4.png" alt="Fold 4" style="height: 60px; width: 43.5px; padding-bottom: 23px;">
+				</div>
+			</div>
+		</td>
+		<td style="padding-bottom: 5px;">
+			<div class="boardingPass">
+				<img src="https://api-production-safair-booksecure.ezyflight.se/images/Tenants/Safair/oci/FSA-LogoFlySafairOnly.jpg" alt="FlySafair Logo" class="logo">
+
+				<div class="boardingpass-top">
+					<h3>Boarding pass</h3>
+					<h4>BHW7ED</h4>
+					<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAA5AQMAAAAlXqRkAAAABlBMVEX///8AAABVwtN&#x2B;AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABr0lEQVQ4jWNgGBaA&#x2B;W/gq4oFTY4cuzhvc/IuaBFlOr7zqdwTP58ULQ75ix5UUvCV7Y1V6oEthTI&#x2B;nfvEF3Rzty5uOrAzoGJ/8HyqKVhRM00&#x2B;5IOVfFD52xdH85sabR1tju3xyN8fJU81BV9/PbqXMsPEeM6LPisVQeF7rYv3fF6WHGDlRz0F6xOeWVbk2s2ez5nT19YufHvmlzs/vKse73pMPQXXT3TsiZSxlZs7/fSxY4&#x2B;sD33VfDCnLX2x1Y/5VFOw3GbDiXReiDfdRA6nHVxW0GJcwr3yOfUU/PJ79KxEyvTBzfu&#x2B;sixxTfc3rmc79yvjhfZnKiooO9YfzW/lf/FgpuMzk6oblZfq3p9M0t83h3oK3As67/gVmZwTaMtrLL3jfLIS4s0V36mnYDkTwpvs4sYLLkK8aVUsTzUFbjXH&#x2B;lP8d/nf/LD6ZovFpoeJLnJv5SPO2/XNp5oCR4fZGzKEkby53u76/OzzuzjvU03Bixv7I&#x2B;LX6F8Tf80voq5fVOc7ecG3xODHtkLyVFOgfeDZ/DgRu53iHKcMv3H9Omb7&#x2B;kjPDmc/y/j51FEwLAAAvfC6v2hbhF8AAAAASUVORK5CYII=" class="boardingpass-top__barcode" />
+					<h4>BAG</h4>
+
+				</div>
+				<div class="boardingpass-bottom">
+					<div class="route">
+						<div class="dept">
+							<p>Departure</p>
+							<h1>JNB</h1>
+							<h4>06:15</h4>
+						</div>
+						<div class="flight">
+							<p>Your flight</p>
+							<img src="https://images.prismic.io/safair-ezycommerce/f91744f9-9dba-4988-add3-e17b95f94c0e_SSRPlane.png?auto=compress,format&amp;rect=0,2,60,52&amp;w=30&amp;h=26" alt="Plane">
+							<h4>FA 369</h4>
+						</div>
+						<div class="arr">
+							<p>Arrival</p>
+							<h1>PLZ</h1>
+							<h4>08:00</h4>
+						</div>
+						<hr>
+						<div class="passenger">
+							<div class="passenger__header">
+								<p>Passenger</p>
+								<p>Date</p>
+							</div>
+							<div class="passenger__data">
+								<p>DEVEREAUX COETZER</p>
+								<p>22 February 24</p>
+							</div>
+						</div>
+						<div class="bpInformation">Check-in and Bag Drop closes 40 minutes prior to departure.</div>
+					</div>
+					<div class="gate">
+						<div class="term">
+							<p>Gate</p>
+							<h4>Check overhead displays</h4>
+						</div>
+						<div class="bTime">
+							<p>Boarding</p>
+							<h4>05:45</h4>
+						</div>
+						<div class="gClose">
+							<p>Gate Closes</p>
+							<h4>06:00</h4>
+						</div>
+						<div class="extras">
+							<div class="extras-items">
+								<div class="extras-item extras-item--text">
+									<h4>30D</h4>
+									<p>Seat</p>
+								</div>
+								<div class="extras-item extras-item--icon">
+									<img src="https://images.prismic.io/safair-ezycommerce/d33d443e-a280-41ac-85ac-d37c7b27eee2_SSR&#x2B;ICON%3DSingle&#x2B;Seat_&#x2B;Size%3DLarge%2C&#x2B;State%3DActive.png?auto=compress,format" alt="Seat">
+									<p>Aisle</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<p class="boardingpass__sequence">103</p>
+					</div>
+				</div>
+			</div>
+
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td style="padding-top: 5px;">
+			<div class="Luggage" style="width: 80%; position: relative; margin: auto;">
+				<p class="highlight" style="margin: 0; padding-bottom: 15px; text-align: left;">Baggage</p>
+				<p>Baggage can be added to your flight for&nbsp;<strong>R350</strong>&nbsp;per 20kg bag at the
+					airport. This is available online for R155.</p>
+				<p>Your checked-in baggage should not contain any valuable items i.e. cameras, laptops, jewelry etc.
+				</p>
+				<p>No dangerous or hazardous items to be contained in the checked-in luggage i.e. flammable
+					liquids/gasses, explosives, toxic substances, corrosive materials etc.</p>
+				<p>Carriage of firearms in either hand baggage or checked-in luggage is strictly prohibited.</p>
+				<p>Baggage will be accepted subject to pertinent security questions being asked when dropping off
+					your baggage.</p>
+				<img src="https://api-production-safair-booksecure.ezyflight.se/images/Tenants/Safair/oci/checkedBag.png" alt="Checked Bag" style="height: 110px; width: 375px; display: inline-block; padding-bottom: 5px;">
+
+				<div class="paxBags" style="border: 2px solid #7f7f7f;">
+					<div class="line" style="width: 100%; padding-top: 5px; margin-top: 5px;">
+						<img src="https://api-production-safair-booksecure.ezyflight.se/images/Tenants/Safair/oci/yes-icon.png" style="width: 19px; height: 19px; display: inline-block; padding: 5px 15px;" alt=""/>
+						<p
+										style="padding-left: 15px; font-size: 12px; display: inline-block; line-height: 5px; margin: 0; position: relative; top: -10px;">
+							Checked Luggage x 1</p>
+					</div>
+					<div class="line" style="width: 100%">
+						<img src="https://api-production-safair-booksecure.ezyflight.se/images/Tenants/Safair/oci/none-icon.png" style="width: 19px; height: 19px; display: inline-block; padding: 5px 15px;"/>
+						<p
+										style="padding-left: 15px; font-size: 12px; display: inline-block; line-height: 5px; margin: 0; position: relative; top: -10px;">
+							Extra Luggage x 0</p>
+					</div>
+					<div class="line" style="width: 100%; padding-bottom: 5px;">
+						<img src="https://api-production-safair-booksecure.ezyflight.se/images/Tenants/Safair/oci/none-icon.png" style="width: 19px; height: 19px; display: inline-block; padding: 5px 15px;"/>
+						<p
+										style="padding-left: 15px; font-size: 12px; display: inline-block; line-height: 5px; margin: 0; position: relative; top: -10px;">
+							Sports Equipment x 0</p>
+					</div>
+				</div>
+			</div>
+		</td>
+		<td>
+			<div class="timetable" style="width: 90%; position: relative; margin: auto;">
+				<div class="line-event"></div>
+				<p class="highlight">DEVEREAUX &#x27;s Timetable</p>
+				<div class="eventList">
+					<div class="event">
+						<h4 style="font-size: 16px; letter-spacing: 0px;">22 February 24</h4>
+						<div class="dot"></div>
+						<div class="descrip">
+							<h4>Make your way to the airport</h4>
+							<p>Don't forget to pack your ID.</p>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="event">
+						<h4>&nbsp;</h4>
+						<div class="dot"></div>
+						<div class="descrip">
+							<h4>Arrive at O.R TAMBO INT. AIRPORT (JNB)</h4>
+							<p>Ensure you arrive 2 hours before your flight to allow enough time to get through
+								airport security.</p>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+					<div class="event">
+						<h4 style="font-size: 18px; letter-spacing: 3px;">05:15</h4>
+						<div class="dot"></div>
+						<div class="descrip">
+							<h4>Check-in your baggage</h4>
+							<p style="text-align: justify;">Bags must be checked-in prior to proceeding to the
+								security check, at least 1 hour prior to the flight's departure.</p>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+					<div class="event">
+						<h4>&nbsp;</h4>
+						<div class="dot"></div>
+						<div class="descrip">
+							<h4>Security</h4>
+							<p>Allow yourself enough time to get through airport security.</p>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+					<div class="event">
+						<h4 style="font-size: 18px; letter-spacing: 3px; margin-top: -2px;">05:45
+							<span style="font-weight: normal; font-size: 11px; letter-spacing: 0px;">Flight <b style="color: #1a85d3; font-weight: bold; font-size: 16px; white-space: nowrap;">FA 369</b></span>
+						</h4>
+						<div class="dot"></div>
+						<div class="descrip">
+							<h4>Boarding Gate</h4>
+							<p>The gate closes 15 mins prior to departure. Please have your ticket along with photo
+								ID ready.</p>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+					<div class="event">
+						<h4 style="font-size: 18px; letter-spacing: 3px;margin-top: -2px;">06:15</h4>
+						<div class="dot"></div>
+						<div class="descrip">
+							<h4>Flight Departs</h4>
+							<p>Your flight will take 1 hours 45 mins</p>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+					<div class="event event--last">
+						<h4>08:00</h4>
+						<div class="dot" style="margin-top: 17px;"></div>
+						<div class="descrip">
+							<h4 style="bottom: -50px;">Flight Arrives in <br /> PORT ELIZABETH INT. AIRPORT (PLZ)
+							</h4>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</div>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+
+</html>
